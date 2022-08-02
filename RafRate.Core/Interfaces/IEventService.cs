@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Core.Interfaces
 {
-    internal interface IEventService
+    public interface IEventService
     {
     }
 }

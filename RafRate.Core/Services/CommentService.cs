@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Core.Services
 {
-    internal class CommentService
+    public class CommentService
     {
     }
 }

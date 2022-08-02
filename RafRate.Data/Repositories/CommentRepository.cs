@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Repositories
 {
-    internal class CommentRepository
+    public class CommentRepository
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Contexts
 {
-    internal class AppDbContext
+    public class AppDbContext
     {
     }
 }

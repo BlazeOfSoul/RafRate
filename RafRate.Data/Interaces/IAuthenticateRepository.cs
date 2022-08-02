@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RafRate.Data.Repositories
+namespace RafRate.Data.Interaces
 {
-    public class EventRepository
+    public interface IAuthenticateRepository
     {
     }
 }

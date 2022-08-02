@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Repositories
 {
-    internal class TeacherRepository
+    public class TeacherRepository
     {
     }
 }

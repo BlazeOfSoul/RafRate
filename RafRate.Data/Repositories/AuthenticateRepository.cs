@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Repositories
 {
-    public class EventRepository
+    public class AuthenticateRepository
     {
     }
 }

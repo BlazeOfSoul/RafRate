@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Entities
 {
-    internal class AdminEntity
+    public class AdminEntity
     {
     }
 }

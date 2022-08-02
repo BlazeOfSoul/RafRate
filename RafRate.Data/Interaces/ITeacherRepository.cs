@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Interaces
 {
-    internal interface ITeacherRepository
+    public interface ITeacherRepository
     {
     }
 }

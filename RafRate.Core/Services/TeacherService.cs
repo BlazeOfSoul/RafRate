@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Core.Services
 {
-    internal class TeacherService
+    public class TeacherService
     {
     }
 }
