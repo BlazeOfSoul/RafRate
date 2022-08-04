@@ -1,4 +1,10 @@
+using RafRate.API.Extentions;
+using RafRate.Core.Interfaces;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.ConfigureServices();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -13,6 +19,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseExceptionHandling();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
 {
@@ -7,5 +8,11 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class EventController : ControllerBase
     {
+        private readonly EventService _eventService;
+
+        public EventController(EventService eventService)
+        {
+            _eventService = eventService;
+        }
     }
 }

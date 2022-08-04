@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RafRate.Core.Domain
+namespace RafRate.Core.Interfaces
 {
-    public class Event
+    public interface IAuthenticationService
     {
     }
 }

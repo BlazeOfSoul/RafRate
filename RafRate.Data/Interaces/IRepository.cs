@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RafRate.Core.Interfaces
+namespace RafRate.Data.Interaces
 {
-    public interface IAuthenticateService
+    public interface IRepository<TEntity> where TEntity : class, IEntity
     {
     }
 }

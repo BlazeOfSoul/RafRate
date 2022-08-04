@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RafRate.Core.Domain
+namespace RafRate.Data.Interaces
 {
-    public class Teacher
+    public interface IEntity
     {
+        public Guid Id { get; set; }
     }
 }

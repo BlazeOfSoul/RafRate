@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Data.Entities
 {
-    public class UserEntity : IEntity
+    public class EventEntity : IEntity
     {
         public Guid Id { get; set; }
     }
