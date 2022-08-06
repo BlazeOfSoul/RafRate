@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RafRate.Core.Services;
 
@@ -8,9 +9,9 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly AuthenticationService _authenticationService;
+        private readonly IAuthenticationService _authenticationService;
 
-        public AuthenticationController(AuthenticationService authenticateService)
+        public AuthenticationController(IAuthenticationService authenticateService)
         {
             _authenticationService = authenticateService;
         }

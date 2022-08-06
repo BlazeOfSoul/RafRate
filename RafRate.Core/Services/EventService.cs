@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RafRate.Core.Services
 {
-    public class EventService : IEventService
+    public class EventService : IActiveDayService
     {
     }
 }
