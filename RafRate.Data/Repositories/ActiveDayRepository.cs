@@ -4,10 +4,10 @@ using RafRate.Data.Repositories.Base;
 
 namespace RafRate.Data.Repositories
 {
-    public class TeacherRepository : BaseRepository<TeacherEntity>
+    public class ActiveDayRepository : BaseRepository<ActiveDayEntity>
     {
-        public TeacherRepository(AppDbContext context)
+        public ActiveDayRepository(AppDbContext context)
             : base(context)
-        { }
+        {}
     }
 }

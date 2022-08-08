@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using System.ComponentModel.DataAnnotations;
 
-namespace RafRate.API.Extentions
+namespace RafRate.API.Handlers
 {
-    public static class AppExtentions
+    public static class ExceptionHandler
     {
         public static IApplicationBuilder UseExceptionHandling(this IApplicationBuilder app)
         {

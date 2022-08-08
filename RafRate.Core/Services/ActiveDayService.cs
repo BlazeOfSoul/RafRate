@@ -2,7 +2,7 @@
 
 namespace RafRate.Core.Services
 {
-    public class TeacherService : ITeacherService
+    public class ActiveDayService : IActiveDayService
     {
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
 {

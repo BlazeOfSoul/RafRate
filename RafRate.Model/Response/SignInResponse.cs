@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RafRate.Model.Response
+﻿namespace RafRate.Model.Response
 {
     public class SignInResponse
     {

@@ -7,11 +7,11 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class ActiveDayController : ControllerBase
     {
-        private readonly IActiveDayService _activedayService;
+        private readonly IActiveDayService _activeDayService;
 
-        public ActiveDayController(IActiveDayService activedayService)
+        public ActiveDayController(IActiveDayService activeDayService)
         {
-            _activedayService = activedayService;
+            _activeDayService = activeDayService;
         }
     }
 }

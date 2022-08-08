@@ -1,15 +1,10 @@
 ﻿using RafRate.Core.Interfaces;
 using RafRate.Data.Entities;
 using RafRate.Data.Interaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RafRate.Core.Services
 {
-    public class CommentService
+    public class CommentService : ICommentService
     {
         private readonly IRepository<CommentEntity> _commentRepository;
 
