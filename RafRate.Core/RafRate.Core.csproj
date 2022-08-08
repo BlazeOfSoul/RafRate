@@ -6,4 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Mapping\Profiles\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RafRate.Data\RafRate.Data.csproj" />
+    </ItemGroup>
+
 </Project>
