@@ -24,6 +24,7 @@ Thumbs.db
 *.lib
 *.sbr
 obj/
+**/Properties/launchSettings.json
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
@@ -31,3 +32,4 @@ _ReSharper*/
 .idea/
 #Nuget packages folder
 packages/
+/RafRate.API/Properties/launchSettings.json
