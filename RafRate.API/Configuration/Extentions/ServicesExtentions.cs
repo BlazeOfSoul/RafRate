@@ -1,7 +1,9 @@
 ﻿using RafRate.Core.Interfaces;
 using RafRate.Core.Services;
+using Microsoft.EntityFrameworkCore;
+using RafRate.Data.Contexts;
 
-namespace RafRate.API.Extentions
+namespace RafRate.API.Configuration.Extentions
 {
     public static class ServicesExtentions
     {
@@ -9,6 +11,8 @@ namespace RafRate.API.Extentions
             => services.AddScoped<CommentService>()
                        .AddScoped<AuthenticationService>()
                        .AddScoped<IActiveDayService>()
-                       .AddScoped<TeacherService>();
+                       .AddScoped<TeacherService>()
+                       .AddDbContext<AppDbContext>(options => 
+                           options.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString")));
     }
 }
