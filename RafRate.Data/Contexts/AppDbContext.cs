@@ -5,7 +5,6 @@ namespace RafRate.Data.Contexts
 {
     public class AppDbContext : DbContext
     {
-        //TODO class with connction string
         public AppDbContext()
         {
         }
@@ -18,9 +17,11 @@ namespace RafRate.Data.Contexts
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            ConnectionStringContext stringContext = null;
+            
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
+                optionsBuilder.UseSqlServer(stringContext.ReturnConnectionString());
             }
         }
     }

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using RafRate.Data.Contexts;
+using RafRate.Data.Entities;
+using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
 {
@@ -7,11 +9,33 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IAuthenticationService _authenticationService;
-
-        public AuthenticationController(IAuthenticationService authenticateService)
+        private readonly AuthenticationService _authenticationService;
+        private readonly AppDbContext _dbContext;
+        public AuthenticationController(AuthenticationService authenticateService, AppDbContext dbContext)
         {
             _authenticationService = authenticateService;
+            _dbContext = dbContext;
+        }
+        
+        // test method
+        [HttpGet]
+        [Route("Users")]
+        public async Task<IActionResult> GetUsers()
+        {
+            List<UserEntity> listUsers = _dbContext.Users.ToList();
+            try
+            {
+                if (listUsers != null)
+                {
+                    return Ok(listUsers);
+                }
+
+                return Ok("No Users in DB");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

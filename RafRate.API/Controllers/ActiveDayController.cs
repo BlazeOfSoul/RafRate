@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RafRate.Core.Interfaces;
+using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
 {
@@ -7,9 +7,9 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class ActiveDayController : ControllerBase
     {
-        private readonly IActiveDayService _activeDayService;
+        private readonly ActiveDayService _activeDayService;
 
-        public ActiveDayController(IActiveDayService activeDayService)
+        public ActiveDayController(ActiveDayService activeDayService)
         {
             _activeDayService = activeDayService;
         }

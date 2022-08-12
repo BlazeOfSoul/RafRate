@@ -5,6 +5,7 @@ using RafRate.Data.Contexts;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureServices();
+builder.Services.AddDataBase();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
