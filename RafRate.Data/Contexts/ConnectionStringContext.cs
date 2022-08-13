@@ -2,17 +2,21 @@
 
 public class ConnectionStringContext
 {
-    // TODO don't work 
-    private string _connectionString;
-
-    ConnectionStringContext()
+    public ConnectionStringContext()
     {
-        _connectionString = Environment.GetEnvironmentVariable("ConnectionString") 
-                            ?? throw new InvalidOperationException();
+        _connectionString = Environment.GetEnvironmentVariable("ConnectionString")
+                           ?? throw new InvalidOperationException();
     }
-
-    public string ReturnConnectionString()
+    private string _connectionString;
+    
+    public string ConnectionString
     {
-        return _connectionString;
+        get {
+            return _connectionString;
+        }
+        set
+        {
+            _connectionString = value;
+        }
     }
 }

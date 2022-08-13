@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RafRate.Core.Interfaces;
 using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
@@ -7,7 +8,7 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class TeacherController : ControllerBase
     {
-        private readonly TeacherService _teacherService;
+        private readonly ITeacherService _teacherService;
 
         public TeacherController(TeacherService teacherService)
         {

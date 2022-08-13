@@ -17,11 +17,11 @@ namespace RafRate.Data.Contexts
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            ConnectionStringContext stringContext = null;
+            ConnectionStringContext stringContext = new();
             
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(stringContext.ReturnConnectionString());
+                optionsBuilder.UseSqlServer(stringContext.ConnectionString);
             }
         }
     }

@@ -5,9 +5,9 @@ namespace RafRate.API.Configuration.Extentions;
 
 public static class DataBaseExtension
 {
-    static ConnectionStringContext stringContext = null;
+    static ConnectionStringContext stringContext = new();
     
     public static IServiceCollection AddDataBase(this IServiceCollection services)
     => services.AddDbContext<AppDbContext>(options => 
-        options.UseSqlServer(stringContext.ReturnConnectionString()));
+        options.UseSqlServer(stringContext.ConnectionString));
 }

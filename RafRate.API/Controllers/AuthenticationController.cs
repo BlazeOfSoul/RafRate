@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RafRate.Core.Interfaces;
 using RafRate.Data.Contexts;
 using RafRate.Data.Entities;
 using RafRate.Core.Services;
@@ -9,9 +10,9 @@ namespace RafRate.API.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly AuthenticationService _authenticationService;
+        private readonly IAuthenticationService _authenticationService;
         private readonly AppDbContext _dbContext;
-        public AuthenticationController(AuthenticationService authenticateService, AppDbContext dbContext)
+        public AuthenticationController(IAuthenticationService authenticateService, AppDbContext dbContext)
         {
             _authenticationService = authenticateService;
             _dbContext = dbContext;
