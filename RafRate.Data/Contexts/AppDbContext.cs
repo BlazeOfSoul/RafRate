@@ -5,7 +5,6 @@ namespace RafRate.Data.Contexts
 {
     public class AppDbContext : DbContext
     {
-        static ConnectionStringContext stringContext = new();
         public AppDbContext()
         {
         }
@@ -20,7 +19,7 @@ namespace RafRate.Data.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(stringContext.ConnectionString);
+                optionsBuilder.UseSqlServer(ConnectionStringContext.ConnectionString);
             }
         }
     }
