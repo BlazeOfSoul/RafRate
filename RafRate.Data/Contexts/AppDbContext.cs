@@ -5,6 +5,7 @@ namespace RafRate.Data.Contexts
 {
     public class AppDbContext : DbContext
     {
+        static ConnectionStringContext stringContext = new();
         public AppDbContext()
         {
         }
@@ -17,8 +18,6 @@ namespace RafRate.Data.Contexts
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            ConnectionStringContext stringContext = new();
-            
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(stringContext.ConnectionString);
