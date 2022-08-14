@@ -2,7 +2,6 @@
 using RafRate.Core.Interfaces;
 using RafRate.Data.Contexts;
 using RafRate.Data.Entities;
-using RafRate.Core.Services;
 
 namespace RafRate.API.Controllers
 {
@@ -23,7 +22,7 @@ namespace RafRate.API.Controllers
         [Route("Users")]
         public async Task<IActionResult> GetUsers()
         {
-            List<UserEntity> listUsers = _dbContext.Users.ToList();
+            var listUsers = _dbContext.Users.ToList();
             try
             {
                 if (listUsers != null)

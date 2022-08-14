@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Diagnostics;
 
-namespace RafRate.API.Handlers
+namespace RafRate.API.Configuration.Handlers
 {
     public static class ExceptionHandler
     {

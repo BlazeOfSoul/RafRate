@@ -1,5 +1,5 @@
 using RafRate.API.Configuration.Extentions;
-using RafRate.API.Handlers;
+using RafRate.API.Configuration.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -14,13 +14,5 @@ namespace RafRate.Data.Contexts
         }
         
         public DbSet<UserEntity> Users { get; set; } = null!;
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(ConnectionStringContext.ConnectionString);
-            }
-        }
     }
 }
