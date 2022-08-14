@@ -1,6 +1,5 @@
-﻿namespace RafRate.Model.Response
+﻿namespace RafRate.Model.Response;
+
+public class SignInResponse
 {
-    public class SignInResponse
-    {
-    }
 }

@@ -2,12 +2,11 @@
 using RafRate.Data.Entities;
 using RafRate.Data.Repositories.Base;
 
-namespace RafRate.Data.Repositories
+namespace RafRate.Data.Repositories;
+
+public class ActiveDayRepository : BaseRepository<ActiveDayEntity>
 {
-    public class ActiveDayRepository : BaseRepository<ActiveDayEntity>
-    {
-        public ActiveDayRepository(AppDbContext context)
-            : base(context)
-        {}
-    }
+    public ActiveDayRepository(AppDbContext context)
+        : base(context)
+    {}
 }

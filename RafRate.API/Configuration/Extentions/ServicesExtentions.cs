@@ -1,9 +1,8 @@
 ﻿using RafRate.Core.Services;
 using RafRate.Core.Interfaces;
 
-namespace RafRate.API.Configuration.Extentions
-{
-    public static class ServicesExtentions
+namespace RafRate.API.Configuration.Extentions;
+public static class ServicesExtentions
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
             => services.AddScoped<ICommentService, CommentService>()
@@ -11,4 +10,4 @@ namespace RafRate.API.Configuration.Extentions
                 .AddScoped<IActiveDayService, ActiveDayService>()
                 .AddScoped<ITeacherService, TeacherService>();
     }
-}
+

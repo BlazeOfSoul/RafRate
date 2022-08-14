@@ -1,9 +1,8 @@
 ﻿using RafRate.Data.Interaces;
 
-namespace RafRate.Data.Entities
+namespace RafRate.Data.Entities;
+
+public class ActiveDayEntity : IEntity
 {
-    public class ActiveDayEntity : IEntity
-    {
-        public Guid Id { get; set; }
-    }
+    public Guid Id { get; set; }
 }

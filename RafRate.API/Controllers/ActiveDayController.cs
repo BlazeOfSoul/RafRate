@@ -2,17 +2,16 @@
 using RafRate.Core.Interfaces;
 using RafRate.Core.Services;
 
-namespace RafRate.API.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ActiveDayController : ControllerBase
-    {
-        private readonly IActiveDayService _activeDayService;
+namespace RafRate.API.Controllers;
 
-        public ActiveDayController(ActiveDayService activeDayService)
-        {
-            _activeDayService = activeDayService;
-        }
+[Route("api/[controller]")]
+[ApiController]
+public class ActiveDayController : ControllerBase
+{
+    private readonly IActiveDayService _activeDayService;
+
+    public ActiveDayController(ActiveDayService activeDayService)
+    {
+        _activeDayService = activeDayService;
     }
 }

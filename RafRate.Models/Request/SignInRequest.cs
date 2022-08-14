@@ -1,6 +1,5 @@
-﻿namespace RafRate.Model.Request
+﻿namespace RafRate.Model.Request;
+
+public class SignInRequest
 {
-    public class SignInRequest
-    {
-    }
 }
