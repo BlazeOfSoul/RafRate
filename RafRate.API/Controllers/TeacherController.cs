@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RafRate.Core.Interfaces;
 using RafRate.Core.Services;
 
-namespace RafRate.API.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TeacherController : ControllerBase
-    {
-        private readonly TeacherService _teacherService;
+namespace RafRate.API.Controllers;
 
-        public TeacherController(TeacherService teacherService)
-        {
-            _teacherService = teacherService;
-        }
+[Route("api/[controller]")]
+[ApiController]
+public class TeacherController : ControllerBase
+{
+    private readonly ITeacherService _teacherService;
+
+    public TeacherController(TeacherService teacherService)
+    {
+        _teacherService = teacherService;
     }
 }

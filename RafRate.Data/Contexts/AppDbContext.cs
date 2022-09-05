@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RafRate.Data.Entities;
 
-namespace RafRate.Data.Contexts
+namespace RafRate.Data.Contexts;
+
+public class AppDbContext : DbContext
 {
-    public class AppDbContext : DbContext
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated();
-        }
     }
+        
+    public DbSet<UserEntity> Users { get; set; } = null!;
 }

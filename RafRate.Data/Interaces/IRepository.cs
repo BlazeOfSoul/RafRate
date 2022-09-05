@@ -1,7 +1,6 @@
-﻿namespace RafRate.Data.Interaces
+﻿namespace RafRate.Data.Interaces;
+
+public interface IRepository<TEntity> where TEntity : class, IEntity
 {
-    public interface IRepository<TEntity> where TEntity : class, IEntity
-    {
         
-    }
 }

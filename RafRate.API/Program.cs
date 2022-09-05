@@ -1,9 +1,10 @@
-using RafRate.API.Extentions;
-using RafRate.API.Handlers;
+using RafRate.API.Configuration.Extentions;
+using RafRate.API.Configuration.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureServices();
+builder.Services.AddDataBase();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

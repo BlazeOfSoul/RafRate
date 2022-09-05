@@ -2,12 +2,11 @@
 using RafRate.Data.Entities;
 using RafRate.Data.Repositories.Base;
 
-namespace RafRate.Data.Repositories
+namespace RafRate.Data.Repositories;
+
+public class TeacherRepository : BaseRepository<TeacherEntity>
 {
-    public class TeacherRepository : BaseRepository<TeacherEntity>
-    {
-        public TeacherRepository(AppDbContext context)
-            : base(context)
-        { }
-    }
+    public TeacherRepository(AppDbContext context)
+        : base(context)
+    { }
 }

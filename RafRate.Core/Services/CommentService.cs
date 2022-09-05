@@ -2,15 +2,8 @@
 using RafRate.Data.Entities;
 using RafRate.Data.Interaces;
 
-namespace RafRate.Core.Services
-{
-    public class CommentService : ICommentService
-    {
-        private readonly IRepository<CommentEntity> _commentRepository;
+namespace RafRate.Core.Services;
 
-        public CommentService(IRepository<CommentEntity> commentRepository)
-        {
-            _commentRepository = commentRepository;
-        }
-    }
+public class CommentService : ICommentService
+{
 }

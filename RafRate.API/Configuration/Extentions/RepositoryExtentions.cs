@@ -2,7 +2,7 @@
 using RafRate.Data.Interaces;
 using RafRate.Data.Repositories;
 
-namespace RafRate.API.Extentions;
+namespace RafRate.API.Configuration.Extentions;
 
 public static class RepositoryExtentions
 {

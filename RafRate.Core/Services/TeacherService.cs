@@ -1,8 +1,7 @@
 ﻿using RafRate.Core.Interfaces;
 
-namespace RafRate.Core.Services
+namespace RafRate.Core.Services;
+
+public class TeacherService : ITeacherService
 {
-    public class TeacherService : ITeacherService
-    {
-    }
 }

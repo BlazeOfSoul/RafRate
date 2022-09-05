@@ -1,8 +1,7 @@
 ﻿
 
-namespace RafRate.Core.Interfaces
+namespace RafRate.Core.Interfaces;
+
+public interface ITeacherService
 {
-    public interface ITeacherService
-    {
-    }
 }

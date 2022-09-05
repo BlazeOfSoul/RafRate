@@ -1,8 +1,7 @@
 ﻿using RafRate.Core.Interfaces;
 
-namespace RafRate.Core.Services
+namespace RafRate.Core.Services;
+
+public class ActiveDayService : IActiveDayService
 {
-    public class ActiveDayService : IActiveDayService
-    {
-    }
 }
