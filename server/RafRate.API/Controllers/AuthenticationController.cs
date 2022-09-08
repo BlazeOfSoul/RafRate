@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RafRate.Core.Interfaces;
 using RafRate.Data.Contexts;
+using RafRate.Data.Entities;
 
 namespace RafRate.API.Controllers;
 
@@ -19,21 +20,18 @@ public class AuthenticationController : ControllerBase
     // test method
     [HttpGet]
     [Route("Users")]
-    public async Task<IActionResult> GetUsers()
+    public async Task<ActionResult<List<UserEntity>>> GetUsers()
     {
-        var listUsers = _dbContext.Users.ToList();
-        try
+        return new List<UserEntity>
         {
-            if (listUsers != null)
+            new UserEntity
             {
-                return Ok(listUsers);
+                Email = "test@gmail.com",
+                FullName = "testTest",
+                Nickname = "TESTER",
+                PasswordHash = "1111",
+                Role = 1
             }
-
-            return Ok("No Users in DB");
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
+        };
     }
 }
