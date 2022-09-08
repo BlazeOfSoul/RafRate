@@ -1,0 +1,16 @@
+<table>
+  <thead>
+  <th>Email</th>
+  <th>PasswordHash</th>
+  <th>NickName</th>
+  <th>FullName</th>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let user of users">
+    <td>{{user.email}}</td>
+    <td>{{user.passwordHash}}</td>
+    <td>{{user.nickName}}</td>
+    <td>{{user.fullName}}</td>
+  </tr>
+  </tbody>
+</table>
