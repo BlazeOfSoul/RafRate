@@ -1,7 +1,6 @@
-#footer {
-  height: 50px;
-}
+$footerColor: #dedede;
 
-.footer-color{
-  background-color: rgba(0, 0, 0, 0.2);
+.footer {
+  background: $footerColor;
+  height: 50px;
 }
