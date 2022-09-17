@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActiveDayComponent } from "./components/active-day/active-day.component";
+import { ActiveDayHomeComponent } from "./components/active-day-home/active-day-home.component";
 import {HomeComponent} from "./components/home/home.component";
 import {SigninFormComponent} from "./user/signin-form/signin-form.component";
 import {SignupFormComponent} from "./user/signup-form/signup-form.component";
-import {TeachersComponent} from "./components/teachers/teachers.component";
+import { ActiveDayPageComponent } from './components/active-day-page/active-day-page.component';
+import { TeachersHomeComponent } from './teachers/teachers-home/teachers-home.component';
 
 const routes: Routes = [
   {
@@ -20,12 +21,12 @@ const routes: Routes = [
     component: SignupFormComponent
   },
   {
-    path:'Teacher',
-    component: TeachersComponent
+    path:'ActiveDayList',
+    component: ActiveDayHomeComponent
   },
   {
-    path:'ActiveDay',
-    component: ActiveDayComponent
+    path:'ActiveDayPage',
+    component: ActiveDayPageComponent
   }
 ];
 

@@ -1,7 +1,14 @@
-.wide-container {
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.full-container {
   display:flex;
   flex-direction:column;
   height: 100%;
+}
+
+.wide-container {
+  @include make-container(0);
+  width: 80%;
 }
 
 app-footer {
