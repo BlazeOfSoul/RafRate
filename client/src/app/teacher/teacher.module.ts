@@ -2,27 +2,27 @@ import { MatCardModule } from '@angular/material/card';
 import { CommentsModule } from './../comments/comments.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TeachersHomeComponent } from './teachers-home/teachers-home.component';
+import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
 import { TeacherCardComponent } from './teacher-card/teacher-card.component';
 import { TeacherPersonPageComponent } from './teacher-person-page/teacher-person-page.component';
-import { TeachersRoutingModule } from './teachers-routing.module';
+import { TeacherRoutingModule } from './teacher-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    TeachersHomeComponent,
+    TeacherHomeComponent,
     TeacherCardComponent,
     TeacherPersonPageComponent
   ],
   imports: [
     CommonModule,
-    TeachersRoutingModule,
+    TeacherRoutingModule,
     CommentsModule,
     MatCardModule
   ],
   exports: [
-    TeachersHomeComponent
+    TeacherHomeComponent
   ]
 })
-export class TeachersModule { }
+export class TeacherModule { }

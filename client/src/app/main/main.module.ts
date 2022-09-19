@@ -4,18 +4,29 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ActiveDayRoutingModule } from "../active-day/active-day-routing.module";
+import { TeacherRoutingModule } from "../teacher/teacher-routing.module";
+import { UserRoutingModule } from "../user/user-routing.module";
+import { ActiveDayModule } from "../active-day/active-day.module";
+import { TeacherModule } from "../teacher/teacher.module";
+import { UserModule } from "../user/user.module";
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ActiveDayRoutingModule,
+    ActiveDayModule,
+    TeacherRoutingModule,
+    TeacherModule,
+    UserRoutingModule,
+    UserModule
   ],
   exports: [
     HomeComponent,

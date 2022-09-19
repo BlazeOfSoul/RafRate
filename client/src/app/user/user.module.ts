@@ -5,19 +5,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SignupFormComponent } from './signup-form/signup-form.component';
-import { UserInfoComponent } from './user-info/user-info.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { MatInputModule} from "@angular/material/input";
+import { MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
     SigninFormComponent,
     SignupFormComponent,
-    UserInfoComponent,
+    UserPageComponent,
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class UserModule { }
