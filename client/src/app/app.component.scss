@@ -1,8 +1,8 @@
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
 .full-container {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -12,5 +12,5 @@
 }
 
 app-footer {
-  margin-top:auto;
+  margin-top: auto;
 }
