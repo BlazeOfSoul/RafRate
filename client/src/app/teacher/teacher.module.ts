@@ -7,23 +7,13 @@ import { TeacherCardComponent } from './teacher-card/teacher-card.component';
 import { TeacherPersonPageComponent } from './teacher-person-page/teacher-person-page.component';
 import { TeacherRoutingModule } from './teacher-routing.module';
 
-
-
 @NgModule({
   declarations: [
     TeacherHomeComponent,
     TeacherCardComponent,
-    TeacherPersonPageComponent
+    TeacherPersonPageComponent,
   ],
-  imports: [
-    CommonModule,
-    TeacherRoutingModule,
-    CommentsModule,
-    MatCardModule
-  ],
-  exports: [
-    TeacherHomeComponent,
-    TeacherRoutingModule
-  ]
+  imports: [CommonModule, TeacherRoutingModule, CommentsModule, MatCardModule],
+  exports: [TeacherHomeComponent, TeacherRoutingModule],
 })
-export class TeacherModule { }
+export class TeacherModule {}

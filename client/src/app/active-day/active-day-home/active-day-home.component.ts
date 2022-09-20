@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-active-day-home',
   templateUrl: './active-day-home.component.html',
-  styleUrls: ['./active-day-home.component.scss']
+  styleUrls: ['./active-day-home.component.scss'],
 })
-export class ActiveDayHomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class ActiveDayHomeComponent {
+  constructor() {}
 }

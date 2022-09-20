@@ -6,26 +6,20 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { UserPageComponent } from './user-page/user-page.component';
-import { MatInputModule} from "@angular/material/input";
-import { MatButtonModule} from "@angular/material/button";
-import {UserRoutingModule} from "./user-routing.module";
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { UserRoutingModule } from './user-routing.module';
 
 @NgModule({
-  declarations: [
-    SigninFormComponent,
-    SignupFormComponent,
-    UserPageComponent
-  ],
+  declarations: [SigninFormComponent, SignupFormComponent, UserPageComponent],
   imports: [
     CommonModule,
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  exports: [
-    UserRoutingModule
-  ]
+  exports: [UserRoutingModule],
 })
-export class UserModule { }
+export class UserModule {}

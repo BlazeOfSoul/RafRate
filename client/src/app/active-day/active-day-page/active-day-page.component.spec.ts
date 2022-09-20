@@ -8,9 +8,8 @@ describe('ActiveDayPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActiveDayPageComponent ]
-    })
-    .compileComponents();
+      declarations: [ActiveDayPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ActiveDayPageComponent);
     component = fixture.componentInstance;

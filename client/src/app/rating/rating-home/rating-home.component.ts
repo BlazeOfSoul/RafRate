@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'rating-home',
+  selector: 'app-rating-home',
   templateUrl: './rating-home.component.html',
-  styleUrls: ['./rating-home.component.scss']
+  styleUrls: ['./rating-home.component.scss'],
 })
-export class RatingHomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class RatingHomeComponent {
+  constructor() {}
 }
