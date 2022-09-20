@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserInfoComponent } from './user-info.component';
+import { ActiveDayHomeComponent } from './active-day-home.component';
 
-describe('UserInfoComponent', () => {
-  let component: UserInfoComponent;
-  let fixture: ComponentFixture<UserInfoComponent>;
+describe('ActiveDayHomeComponent', () => {
+  let component: ActiveDayHomeComponent;
+  let fixture: ComponentFixture<ActiveDayHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserInfoComponent ]
+      declarations: [ ActiveDayHomeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserInfoComponent);
+    fixture = TestBed.createComponent(ActiveDayHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
