@@ -7,6 +7,7 @@ import { MatCardModule } from "@angular/material/card";
 import { RatingModule } from "../rating/rating.module";
 import { CommentsModule } from "../comments/comments.module";
 import { MatButtonModule } from "@angular/material/button";
+import {ActiveDayRoutingModule} from "./active-day-routing.module";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import { MatButtonModule } from "@angular/material/button";
         RatingModule,
         CommentsModule,
         MatButtonModule
-    ]
+    ],
+  exports : [
+    ActiveDayRoutingModule
+  ]
 })
 export class ActiveDayModule { }

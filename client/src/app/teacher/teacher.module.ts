@@ -22,7 +22,8 @@ import { TeacherRoutingModule } from './teacher-routing.module';
     MatCardModule
   ],
   exports: [
-    TeacherHomeComponent
+    TeacherHomeComponent,
+    TeacherRoutingModule
   ]
 })
 export class TeacherModule { }

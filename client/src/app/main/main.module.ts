@@ -10,6 +10,7 @@ import { UserRoutingModule } from "../user/user-routing.module";
 import { ActiveDayModule } from "../active-day/active-day.module";
 import { TeacherModule } from "../teacher/teacher.module";
 import { UserModule } from "../user/user.module";
+import { MainRoutingModule } from "./main-routing.module";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { UserModule } from "../user/user.module";
   exports: [
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainRoutingModule
   ]
 })
 export class MainModule { }

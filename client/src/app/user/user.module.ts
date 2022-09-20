@@ -8,12 +8,13 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { MatInputModule} from "@angular/material/input";
 import { MatButtonModule} from "@angular/material/button";
+import {UserRoutingModule} from "./user-routing.module";
 
 @NgModule({
   declarations: [
     SigninFormComponent,
     SignupFormComponent,
-    UserPageComponent,
+    UserPageComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +23,9 @@ import { MatButtonModule} from "@angular/material/button";
     MatIconModule,
     MatInputModule,
     MatButtonModule
+  ],
+  exports: [
+    UserRoutingModule
   ]
 })
 export class UserModule { }
