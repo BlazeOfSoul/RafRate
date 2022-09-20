@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   templateUrl: './teacher-home.component.html',
-  styleUrls: ['./teacher-home.component.scss'],
+  styleUrls: ['./teacher-home.component.scss']
 })
-export class TeacherHomeComponent {
-  constructor() {}
+export class TeacherHomeComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 }

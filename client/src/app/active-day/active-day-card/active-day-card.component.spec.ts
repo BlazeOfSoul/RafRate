@@ -8,8 +8,9 @@ describe('ActiveDayCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ActiveDayCardComponent],
-    }).compileComponents();
+      declarations: [ ActiveDayCardComponent ]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(ActiveDayCardComponent);
     component = fixture.componentInstance;

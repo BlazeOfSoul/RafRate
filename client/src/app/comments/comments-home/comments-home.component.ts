@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-comments-home',
+  selector: 'comments-home',
   templateUrl: './comments-home.component.html',
-  styleUrls: ['./comments-home.component.scss'],
+  styleUrls: ['./comments-home.component.scss']
 })
-export class CommentsHomeComponent {
-  constructor() {}
+export class CommentsHomeComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 }

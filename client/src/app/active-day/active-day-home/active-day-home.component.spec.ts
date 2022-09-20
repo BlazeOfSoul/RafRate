@@ -8,8 +8,9 @@ describe('ActiveDayHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ActiveDayHomeComponent],
-    }).compileComponents();
+      declarations: [ ActiveDayHomeComponent ]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(ActiveDayHomeComponent);
     component = fixture.componentInstance;

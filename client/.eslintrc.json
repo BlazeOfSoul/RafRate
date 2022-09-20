@@ -10,7 +10,7 @@
       ],
       "parserOptions": {
         "project": [
-          "tsconfig.*?.json"
+          "tsconfig.json"
         ],
         "createDefaultProgram": true
       },
@@ -39,19 +39,12 @@
     },
     {
       "files": [
-        "*.component.html"
+        "*.html"
       ],
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {
-        "max-len": [
-          "error",
-          {
-            "code": 140
-          }
-        ]
-      }
+      "rules": {}
     }
   ]
 }
