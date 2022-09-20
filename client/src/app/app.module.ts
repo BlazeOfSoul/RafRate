@@ -5,11 +5,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainModule } from './main/main.module';
-import { ActiveDayRoutingModule } from "./active-day/active-day-routing.module";
 import { ActiveDayModule } from "./active-day/active-day.module";
 import { TeacherModule } from "./teacher/teacher.module";
-import { TeacherRoutingModule } from "./teacher/teacher-routing.module";
-import { MainRoutingModule } from "./main/main-routing.module";
 
 
 @NgModule({
@@ -23,7 +20,7 @@ import { MainRoutingModule } from "./main/main-routing.module";
     BrowserAnimationsModule,
     MainModule,
     ActiveDayModule,
-    TeacherModule,
+    TeacherModule
   ],
   providers: [],
   bootstrap: [AppComponent]
