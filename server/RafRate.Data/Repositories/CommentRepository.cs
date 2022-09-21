@@ -8,5 +8,6 @@ public class CommentRepository : BaseRepository<CommentEntity>
 {
     public CommentRepository(AppDbContext context)
         : base(context)
-    { }
+    {
+    }
 }

@@ -8,5 +8,6 @@ public class TeacherRepository : BaseRepository<TeacherEntity>
 {
     public TeacherRepository(AppDbContext context)
         : base(context)
-    { }
+    {
+    }
 }

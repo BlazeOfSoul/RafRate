@@ -10,8 +10,5 @@ public class TeacherController : ControllerBase
 {
     private readonly ITeacherService _teacherService;
 
-    public TeacherController(TeacherService teacherService)
-    {
-        _teacherService = teacherService;
-    }
+    public TeacherController(TeacherService teacherService) => this._teacherService = teacherService;
 }

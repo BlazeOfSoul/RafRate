@@ -7,8 +7,5 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity>
     where TEntity : class, IEntity
 {
     protected readonly DbContext _context;
-    public BaseRepository(DbContext context)
-    {
-        _context = context;
-    }
+    public BaseRepository(DbContext context) => this._context = context;
 }

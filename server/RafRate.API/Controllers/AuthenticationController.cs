@@ -11,20 +11,20 @@ public class AuthenticationController : ControllerBase
 {
     private readonly IAuthenticationService _authenticationService;
     private readonly AppDbContext _dbContext;
+
     public AuthenticationController(IAuthenticationService authenticateService, AppDbContext dbContext)
     {
-        _authenticationService = authenticateService;
-        _dbContext = dbContext;
+        this._authenticationService = authenticateService;
+        this._dbContext = dbContext;
     }
-        
+
     // test method
     [HttpGet]
     [Route("Users")]
-    public async Task<ActionResult<List<UserEntity>>> GetUsers()
-    {
-        return new List<UserEntity>
+    public async Task<ActionResult<List<UserEntity>>> GetUsers() =>
+        new List<UserEntity>
         {
-            new UserEntity
+            new()
             {
                 Email = "test@gmail.com",
                 FullName = "testTest",
@@ -33,5 +33,4 @@ public class AuthenticationController : ControllerBase
                 Role = 1
             }
         };
-    }
 }

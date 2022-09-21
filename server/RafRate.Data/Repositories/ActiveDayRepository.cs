@@ -8,5 +8,6 @@ public class ActiveDayRepository : BaseRepository<ActiveDayEntity>
 {
     public ActiveDayRepository(AppDbContext context)
         : base(context)
-    {}
+    {
+    }
 }

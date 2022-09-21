@@ -10,7 +10,7 @@ public static class RepositoryExtensions
         where TEntity : class, IEntity
         where TRepository : class, IRepository<TEntity>
         => services.AddScoped<IRepository<TEntity>, TRepository>();
-    
+
     public static IServiceCollection ConfigureDataAccess(this IServiceCollection services, IConfiguration configuration)
         => services.AddRepository<CommentEntity, CommentRepository>();
 }
