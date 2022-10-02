@@ -1,6 +1,6 @@
-﻿using RafRate.Data.Interfaces;
+﻿namespace RafRate.Data.Entities.Comments;
 
-namespace RafRate.Data.Entities;
+using RafRate.Data.Interfaces;
 
 public class CommentEntity : IEntity
 {

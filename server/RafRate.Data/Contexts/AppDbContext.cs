@@ -3,6 +3,8 @@ using RafRate.Data.Entities;
 
 namespace RafRate.Data.Contexts;
 
+using Entities.Users;
+
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)

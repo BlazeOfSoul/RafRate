@@ -5,6 +5,8 @@ using RafRate.Data.Entities;
 
 namespace RafRate.API.Controllers;
 
+using Data.Entities.Users;
+
 [Route("api/[controller]")]
 [ApiController]
 public class AuthenticationController : ControllerBase
@@ -20,7 +22,7 @@ public class AuthenticationController : ControllerBase
 
     // test method
     [HttpGet]
-    [Route("Users")]
+    [Route("users")]
     public async Task<ActionResult<List<UserEntity>>> GetUsers() =>
         new List<UserEntity>
         {
