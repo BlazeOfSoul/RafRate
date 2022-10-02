@@ -10,5 +10,8 @@ public class CommentController : ControllerBase
 {
     private readonly ICommentService _commentService;
 
-    public CommentController(CommentService commentService) => this._commentService = commentService;
+    public CommentController(CommentService commentService)
+    {
+        _commentService = commentService;
+    }
 }

@@ -20,9 +20,9 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity>
 
     public async Task<TEntity> CreateAsync(TEntity entity)
     {
-        var newEntity = await _context.AddAsync(entity);
+        var entry = await _context.AddAsync(entity);
         await _context.SaveChangesAsync();
-        return newEntity.Entity;
+        return entry.Entity;
     }
 
     public async Task<TEntity> UpdateAsync(TEntity entity)

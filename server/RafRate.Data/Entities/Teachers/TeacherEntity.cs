@@ -8,7 +8,7 @@ public class TeacherEntity : IEntity
 
     public string Name { get; set; }
 
-    public string JobTittle { get; set; }
+    public string JobTitle { get; set; }
 
     public string Disciplines { get; set; }
 }

@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RafRate.Core.Interfaces;
 using RafRate.Data.Contexts;
-using RafRate.Data.Entities;
+using RafRate.Data.Entities.Users;
 
 namespace RafRate.API.Controllers;
 
-using Data.Entities.Users;
+
 
 [Route("api/[controller]")]
 [ApiController]

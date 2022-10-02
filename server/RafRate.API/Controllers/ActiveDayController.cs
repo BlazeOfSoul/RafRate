@@ -10,5 +10,8 @@ public class ActiveDayController : ControllerBase
 {
     private readonly IActiveDayService _activeDayService;
 
-    public ActiveDayController(ActiveDayService activeDayService) => this._activeDayService = activeDayService;
+    public ActiveDayController(ActiveDayService activeDayService)
+    {
+        _activeDayService = activeDayService;
+    }
 }
