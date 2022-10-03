@@ -6,7 +6,7 @@ namespace RafRate.Data.Repositories.Base;
 using System.Linq.Expressions;
 
 public class BaseRepository<TEntity> : IBaseRepository<TEntity>
-    where TEntity : class
+    where TEntity : class, IEntity
 {
     protected readonly DbContext _context;
 
@@ -32,14 +32,15 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity>
         return entity;
     }
 
-    public async Task<TEntity> GetByAsync(Expression<Func<TEntity, bool>> expression, params Expression<Func<TEntity, object>>[] includes)
+    public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
     {
         IQueryable<TEntity> query = _dbSet;
-        foreach (var include in includes)
-        {
-            query = query.Include(include);
-        }
         return await query.FirstOrDefaultAsync(expression);
+    }
+    
+    public async Task<TEntity> GetByIdAsync(Guid id)
+    {
+        return await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task RemoveAsync(TEntity entity)

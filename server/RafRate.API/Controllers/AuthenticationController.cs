@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RafRate.Core.Interfaces;
 using RafRate.Data.Contexts;
-using RafRate.Data.Entities.Users;
+using RafRate.Data.Entities;
 
 namespace RafRate.API.Controllers;
-
-
 
 [Route("api/[controller]")]
 [ApiController]
@@ -16,8 +14,8 @@ public class AuthenticationController : ControllerBase
 
     public AuthenticationController(IAuthenticationService authenticateService, AppDbContext dbContext)
     {
-        this._authenticationService = authenticateService;
-        this._dbContext = dbContext;
+        _authenticationService = authenticateService;
+        _dbContext = dbContext;
     }
 
     // test method

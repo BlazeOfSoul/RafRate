@@ -2,13 +2,15 @@
 
 namespace RafRate.Data.Interfaces;
 
-public interface IBaseRepository<TEntity>
+public interface IBaseRepository<TEntity> where TEntity : IEntity
 {
     Task<TEntity> CreateAsync(TEntity entity);
 
     Task<TEntity> UpdateAsync(TEntity entity);
 
-    Task<TEntity> GetByAsync(Expression<Func<TEntity, bool>> expression, params Expression<Func<TEntity, object>>[] includes);
+    Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression);
+
+    Task<TEntity> GetByIdAsync(Guid id);
 
     Task RemoveAsync(TEntity entity);
 }

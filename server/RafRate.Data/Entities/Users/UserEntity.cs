@@ -1,6 +1,6 @@
 ﻿using RafRate.Data.Interfaces;
 
-namespace RafRate.Data.Entities.Users;
+namespace RafRate.Data.Entities;
 
 // will be replaced with Identity
 public class UserEntity : IEntity
