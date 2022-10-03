@@ -4,11 +4,11 @@ using RafRate.Data.Repositories.Base;
 
 namespace RafRate.Data.Repositories;
 
-using Entities.ActiveDays;
+using Entities.Users;
 
-public class ActiveDayRepository : BaseRepository<ActiveDayEntity>
+public class UserRepository : BaseRepository<UserEntity>
 {
-    public ActiveDayRepository(AppDbContext context)
+    public UserRepository(AppDbContext context)
         : base(context)
     {
     }

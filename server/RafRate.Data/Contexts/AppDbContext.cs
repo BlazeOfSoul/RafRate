@@ -9,6 +9,6 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
-        
+
     public DbSet<UserEntity> Users { get; set; } = null!;
 }

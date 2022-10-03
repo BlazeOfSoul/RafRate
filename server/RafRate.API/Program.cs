@@ -9,10 +9,11 @@ builder.Services.AddDataBase();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(options => options.AddPolicy(name: "RafRateOrigins",
+builder.Services.AddCors(options => options.AddPolicy("RafRateOrigins",
     policy =>
     {
-        policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+        policy.WithOrigins(builder.Configuration["FrontUrl"])
+            .AllowAnyMethod().AllowAnyHeader();
     }));
 
 var app = builder.Build();
