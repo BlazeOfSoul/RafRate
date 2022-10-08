@@ -1,14 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RafRate.Data.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace RafRate.Data.Contexts;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<IdentityUser>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }
 
-    public DbSet<UserEntity> Users { get; set; } = null!;
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+    }
 }
