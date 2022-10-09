@@ -1,19 +1,9 @@
-﻿using RafRate.Data.Interfaces;
+﻿using Microsoft.AspNetCore.Identity;
+using RafRate.Data.Interfaces;
 
-namespace RafRate.Data.Entities;
+namespace RafRate.Data.Entities.Users;
 
-// will be replaced with Identity
-public class UserEntity : IEntity
+public class UserEntity : IdentityUser<Guid>, IEntity
 {
-    public Guid Id { get; set; }
 
-    public string Email { get; set; }
-
-    public string PasswordHash { get; set; }
-
-    public string Nickname { get; set; }
-
-    public string FullName { get; set; }
-
-    public int Role { get; set; }
 }
