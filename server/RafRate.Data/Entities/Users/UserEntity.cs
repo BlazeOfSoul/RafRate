@@ -1,9 +1,9 @@
-﻿using RafRate.Data.Interfaces;
+﻿using Microsoft.AspNetCore.Identity;
+using RafRate.Data.Interfaces;
 
-namespace RafRate.Data.Entities;
+namespace RafRate.Data.Entities.Users;
 
-public class UserEntity : IEntity
+public class UserEntity : IdentityUser<Guid>, IEntity
 {
-    public Guid Id { get; set; }
 
 }

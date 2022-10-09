@@ -46,18 +46,21 @@ public class AuthenticationController : ControllerBase
             };
 
             foreach (var userRole in userRoles)
+            {
                 authClaims.Add(new Claim(ClaimTypes.Role,
                     userRole));
+            }
+
 
             var token = GetToken(authClaims);
 
-            return this.Ok(new
+            return Ok(new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
                 expiration = token.ValidTo
             });
         }
-        return this.Unauthorized();
+        return Unauthorized();
     }
 
     [HttpPost]
@@ -66,8 +69,9 @@ public class AuthenticationController : ControllerBase
     {
         var userExists = await _userManager.FindByNameAsync(model.Username);
         if (userExists != null)
-            return this.StatusCode(StatusCodes.Status500InternalServerError,
-                new Response { Status = "Error", Message = "User already exists!" });
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
 
         IdentityUser user = new()
         {
@@ -78,10 +82,11 @@ public class AuthenticationController : ControllerBase
         var result = await _userManager.CreateAsync(user,
             model.Password);
         if (!result.Succeeded)
-            return this.StatusCode(StatusCodes.Status500InternalServerError,
-                new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
 
-        return this.Ok(new Response { Status = "Success", Message = "User created successfully!" });
+        return Ok();
     }
 
     [HttpPost]
@@ -90,8 +95,9 @@ public class AuthenticationController : ControllerBase
     {
         var userExists = await _userManager.FindByNameAsync(model.Username);
         if (userExists != null)
-            return this.StatusCode(StatusCodes.Status500InternalServerError,
-                new Response { Status = "Error", Message = "User already exists!" });
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
 
         IdentityUser user = new()
         {
@@ -102,27 +108,37 @@ public class AuthenticationController : ControllerBase
         var result = await _userManager.CreateAsync(user,
             model.Password);
         if (!result.Succeeded)
-            return this.StatusCode(StatusCodes.Status500InternalServerError,
-                new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
 
         if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+        {
             await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+        }
+
         if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+        {
             await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+        }
+        
+        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
+        {
+            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+        }
 
         if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
-            await _userManager.AddToRoleAsync(user,
-                UserRoles.Admin);
-        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
-            await _userManager.AddToRoleAsync(user,
-                UserRoles.User);
-        return this.Ok(new Response { Status = "Success", Message = "User created successfully!" });
+        {
+            await _userManager.AddToRoleAsync(user, UserRoles.User);
+        }
+        return Ok();
     }
 
     private JwtSecurityToken GetToken(List<Claim> authClaims)
     {
         var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8
-            .GetBytes(Environment.GetEnvironmentVariable("ConnectionString", EnvironmentVariableTarget.Machine)));
+            .GetBytes(Environment.GetEnvironmentVariable("Secret",
+                EnvironmentVariableTarget.Machine)));
 
         var token = new JwtSecurityToken(
             _configuration["JWT:ValidIssuer"],

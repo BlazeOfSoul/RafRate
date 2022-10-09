@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using RafRate.API.Configuration.Extensions;
 using RafRate.API.Configuration.Handlers;
 using RafRate.Data.Contexts;
+using RafRate.Data.Entities.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -12,7 +13,7 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.ConfigureServices();
 builder.Services.AddDataBase();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<UserEntity, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddAuthentication(options =>
@@ -32,7 +33,7 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = configuration["JWT:ValidAudience"],
             ValidIssuer = configuration["JWT:ValidIssuer"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(Environment.GetEnvironmentVariable("ConnectionString", EnvironmentVariableTarget.Machine)))
+                .GetBytes(Environment.GetEnvironmentVariable("Secret", EnvironmentVariableTarget.Machine)))
         };
     });
 
