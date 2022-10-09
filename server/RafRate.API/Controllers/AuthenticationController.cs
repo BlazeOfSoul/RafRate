@@ -32,35 +32,33 @@ public class AuthenticationController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
         var user = await _userManager.FindByNameAsync(model.Username);
-        if (user != null && await _userManager.CheckPasswordAsync(user,
-                model.Password))
+        if (user == null || !( await _userManager.CheckPasswordAsync(user,
+                model.Password)))
         {
-            var userRoles = await _userManager.GetRolesAsync(user);
-
-            var authClaims = new List<Claim>
-            {
-                new(ClaimTypes.Name,
-                    user.UserName),
-                new(JwtRegisteredClaimNames.Jti,
-                    Guid.NewGuid().ToString())
-            };
-
-            foreach (var userRole in userRoles)
-            {
-                authClaims.Add(new Claim(ClaimTypes.Role,
-                    userRole));
-            }
-
-
-            var token = GetToken(authClaims);
-
-            return Ok(new
-            {
-                token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo
-            });
+            return this.Unauthorized();
         }
-        return Unauthorized();
+
+        var userRoles = await _userManager.GetRolesAsync(user);
+
+        var authClaims = new List<Claim>
+        {
+            new(ClaimTypes.Name,
+                user.UserName),
+            new(JwtRegisteredClaimNames.Jti,
+                Guid.NewGuid().ToString())
+        };
+
+        foreach (var userRole in userRoles)
+            authClaims.Add(new Claim(ClaimTypes.Role,
+                userRole));
+
+        var token = GetToken(authClaims);
+
+        return this.Ok(new
+        {
+            token = new JwtSecurityTokenHandler().WriteToken(token),
+            expiration = token.ValidTo
+        });
     }
 
     [HttpPost]
