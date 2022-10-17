@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RafRate.Data.Entities.Users;
 
 namespace RafRate.Data.Contexts;
 
@@ -10,9 +11,6 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
         : base(options)
     {
     }
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
-    }
+    
+    public DbSet<UserEntity> Users { get; set; } = null!;
 }
