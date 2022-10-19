@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using RafRate.API.Configuration.Extensions;
 using RafRate.API.Configuration.Handlers;
@@ -13,9 +14,11 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.ConfigureServices();
 builder.Services.AddDataBase();
 
-builder.Services.AddIdentity<UserEntity, IdentityRole>()
+builder.Services.AddIdentity<UserEntity, UserRoles>()
     .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders()
+    .AddUserStore<UserStore<UserEntity, UserRoles, AppDbContext, Guid>> ()
+    .AddRoleStore<RoleStore<UserRoles, AppDbContext, Guid>>();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
