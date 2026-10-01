@@ -1,6 +1,8 @@
-﻿namespace RafRate.Data.Entities.Users;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class UserRoles
+namespace RafRate.Data.Entities.Users;
+
+public class UserRoles : IdentityRole<Guid>
 {
     public const string Admin = "Admin";
     public const string Moderator = "Moderator";
